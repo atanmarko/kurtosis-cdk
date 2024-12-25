@@ -24,6 +24,7 @@ pless_zkevm_node_package = "./src/additional_services/pless_zkevm_node.star"
 prometheus_package = "./src/additional_services/prometheus.star"
 tx_spammer_package = "./src/additional_services/tx_spammer.star"
 assertoor_package = "./src/additional_services/assertoor.star"
+jaeger_package = "./src/additional_services/jaeger.star"
 
 
 def run(plan, args={}):
@@ -189,6 +190,8 @@ def run(plan, args={}):
             )
         elif additional_service == "assertoor":
             deploy_additional_service(plan, "assertoor", assertoor_package, args)
+        elif additional_service == "jaeger":
+            deploy_additional_service(plan, "jaeger", jaeger_package, args)
         else:
             fail("Invalid additional service: %s" % (additional_service))
 

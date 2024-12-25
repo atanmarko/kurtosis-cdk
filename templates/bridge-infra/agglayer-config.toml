@@ -33,8 +33,10 @@ settlement-timeout = 1200
 # level = "{{.global_log_level}}"
 # we want debug visibility here for now
 level = "debug"
-outputs = ["stderr"]
+outputs = ["stderr", "otlp"]
 format = "json"
+otlp-service-name = "agglayer-node"
+otlp-agent = "http://jaeger:4317"
 
 [auth.local]
 private-keys = [
